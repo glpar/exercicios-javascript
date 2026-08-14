@@ -89,6 +89,41 @@
       small {
         color: #71717a;
       }
+
+      @media (max-height: 650px) {
+        body {
+          place-items: start center;
+          padding: 1.25rem;
+        }
+
+        h1 {
+          font-size: clamp(2rem, 6vw, 3.5rem);
+        }
+
+        p {
+          margin-block: 0.5rem;
+          line-height: 1.5;
+        }
+
+        nav {
+          margin-top: 1.25rem;
+        }
+
+        a {
+          min-height: 96px;
+          padding: 1rem;
+        }
+      }
+
+      @media (max-width: 520px) {
+        body {
+          padding: 1rem;
+        }
+
+        nav {
+          grid-template-columns: 1fr;
+        }
+      }
     </style>
   </head>
   <body>
