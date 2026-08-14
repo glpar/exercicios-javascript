@@ -8,6 +8,11 @@ numérico para sistema de notas em caracteres tipo A B C
 * menor que 60    -   F
 */
 
+const output = document.querySelector('#output')
+const show = (message) => {
+    output.textContent += `${message}\n`
+}
+
 function notas (nota) {
 
 let notaf
@@ -32,7 +37,7 @@ else if(nota < 60){
     notaf = "F"
 };
 
-    console.log(notaf)
+    show(`Nota ${nota}: conceito ${notaf}`)
 }
 
 notas(80)

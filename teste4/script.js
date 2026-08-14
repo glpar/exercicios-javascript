@@ -6,6 +6,11 @@
         • Transformar a função acima em uma função que irá receber o nome do autor e devolver os livros desse autor.
 */
 
+const output = document.querySelector('#output')
+const show = (message) => {
+    output.textContent += `${message}\n`
+}
+
 
 const booksByCategory = [
     {
@@ -51,25 +56,25 @@ function counter(criador) {
     for(i=0; i < booksByCategory.length; i++){
         cont++; 
         book += booksByCategory[i].books.length;
-        console.log("A " + [i+1] + "ª categoria possuem " + booksByCategory[i].books.length + " livros");
+        show("A " + [i+1] + "ª categoria possui " + booksByCategory[i].books.length + " livros");
         
         // aut += booksByCategory[i].books.author.length;
         for(j=0; j < booksByCategory[i].books.length; j++){
             // console.log(booksByCategory[i].books[j].author);
             aut += booksByCategory[i].books[j].author.length;
             if(booksByCategory[i].books[j].author.includes("Augusto Cury")){
-                console.log("Livros do Augusto Cury:" + booksByCategory[i].books[j].title);
+                show("Livro de Augusto Cury: " + booksByCategory[i].books[j].title);
             }
             if(booksByCategory[i].books[j].author.includes(criador)){
-                console.log("Livros do autor digitado: " + booksByCategory[i].books[j].title);
+                show("Livro do autor pesquisado: " + booksByCategory[i].books[j].title);
             }
         } 
     }
     
 
-    console.log("Quantidade de categorias são " + cont);
-    console.log("Quantidade de livros são " + book);
-    console.log("Quantidade de autores são " + book);
+    show("Quantidade de categorias: " + cont);
+    show("Quantidade de livros: " + book);
+    show("Quantidade de autores: " + book);
     
 }
 
